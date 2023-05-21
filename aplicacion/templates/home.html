@@ -1,0 +1,38 @@
+{% extends "layout1.html" %}
+{% block title %}Fitnees{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-10">
+      <h3>Registro de entrada</h3>
+      <div class="panel panel-default">
+        <table class="table table-bordered">
+          <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Ir</th>
+
+          </tr>
+
+
+          <tr>
+            <td>INGRESO</td>
+            <td>Entrada al Evento</td>
+            <td><a href="{{url_for('bus_articulo')}}"><span class="glyphicon glyphicon-pencil"></span> Ir</a></td>
+          </tr>
+          <tr>
+            <td>LISTADO ASISTENTES</td>
+            <td>Reporte de la personas</td>
+            <td><a href="{{url_for('home')}}"><span class="glyphicon glyphicon-pencil"></span> Ir</a></td>
+          </tr>
+          
+
+        </table>
+
+      </div>
+    </div>
+  </div>
+
+
+  {% endblock %}

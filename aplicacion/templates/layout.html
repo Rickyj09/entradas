@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="examenes, Laboratorio, COVID-19">
+  <title>{%block title%} {%endblock%}</title>
+  <link rel="shortcut icon" href="/static/img/favicon.png">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css')}}" />
+  <link rel="stylesheet" href="static/css/normalize.css">
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  <script src="https://kit.fontawesome.com/e2eedfb962.js" crossorigin="anonymous"></script>
+
+  <header>
+
+    <ul class="nav nav-pills nav-justified">
+      <li class="nav-item">
+        <a href="{{ url_for ('home')}}">
+          <img src="/static/img/logo0.png" class="logo">
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('inicio')}}">INICIO </a>
+      </li>
+
+      <li class="nav-item">
+        {% if current_user.is_authenticated %}
+        <a class="nav-link" href="/logout"> {{ current_user.username}} (Salir)</a>
+      </li>
+      <li class="nav-item">
+        {% else %}
+        <a class="nav-link" href="/login">Login</a>
+        {% endif %}
+      </li>
+    </ul>
+    </div>
+    <div id="sfcm95pk38ws11zdfwdw5bs73jsyryezjhq"></div><script type="text/javascript" src="https://counter9.stat.ovh/private/counter.js?c=m95pk38ws11zdfwdw5bs73jsyryezjhq&down=async" async></script><noscript><a href="https://www.contadorvisitasgratis.com" title="contador de visitas para tumblr"><img src="https://counter9.stat.ovh/private/contadorvisitasgratis.php?c=m95pk38ws11zdfwdw5bs73jsyryezjhq" border="0" title="contador de visitas para tumblr" alt="contador de visitas para tumblr"></a></noscript>
+
+</head>
+
+<body background="/static/img/fondo1.jpg">
+  <div class="container">
+    <center>
+      <h1></h1>
+    </center>
+    {% block content %}{% endblock %}
+  
+</body>
+
+</html>

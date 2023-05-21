@@ -1,0 +1,14 @@
+{% extends "layout1.html" %}
+{% block title %}FOTO{% endblock %}
+{% block content %}
+	    <h2>Galeria de Fotos</h2>
+	    
+	    	{% for lis in lista %}
+	    	
+	    	<img src="{{url_for('static',filename='img/fotos/')}}{{lis}}"/>
+	    	{% endfor %}
+	    	<br/>
+	    	<a href="{{url_for('upload_foto')}}">Subir</a>
+
+  
+{% endblock %}

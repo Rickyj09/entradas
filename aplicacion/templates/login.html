@@ -1,0 +1,28 @@
+{% extends "layout1.html" %}
+{% block title %}Reportes Winxasscorp{% endblock %}
+{% block content%}
+
+<div class="container">
+<div class="col-md-4"></div>
+<div class="col-md-4">
+      <form class="form-signin" method="post">
+      {% for field, errors in form.errors.items() %}
+        <div class="alert alert-danger">
+          {{ form[field].label }}: {{ ', '.join(errors) }}
+        </div>
+      {% endfor %}
+      <div class="form-group col-xs-12 col-sm-12 col-md-4  position-relative"></div>
+        <h2 class="form-signin-heading">Login</h2>
+        {{ form.csrf_token }}
+        {{form.username.label()}}
+        {{form.username(class="form-control")}}
+        
+        {{form.password.label()}}
+        {{form.password(class="form-control")}}
+        <br>
+        {{form.submit(class="btn btn-lg btn-primary btn-block")}}
+    </form>
+      </div>
+<div class="col-md-4"></div>
+    </div> <!-- /content -->
+{% endblock %}

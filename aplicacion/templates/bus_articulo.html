@@ -1,0 +1,57 @@
+{% extends 'layout1.html' %}
+{%block title%}Ingreso{%endblock%}
+{% block content %}
+
+<body>
+ 
+
+  <form  class="row g-3 needs-validation" method="POST" enctype="multipart/form-data">
+    
+    {{ form.csrf_token }}
+    
+    <h2>DATOS</h2>
+
+    <hr>
+    
+    <div class="form-group col-xs-12 col-sm-12 col-md-3  position-relative">
+      {{ form.nombres.label }} {{ form.nombres(class_="form-control") }}
+      {% for error in form.nombres.errors %}
+      <span style="color: red;"> {{ error }} </span>
+      {% endfor %}
+    </div>
+
+
+    <div class="form-group col-xs-12 col-sm-12 col-md-3  position-relative">
+      {{ form.iden.label }} {{ form.iden(class_="form-control") }}
+      {% for error in form.iden.errors %}
+      <span style="color: red;"> {{ error }} </span>
+      {% endfor %}
+    </div>
+
+    <div class="form-group col-xs-12 col-sm-12 col-md-3  position-relative">
+      {{ form.fec_nac.label }} {{ form.fec_nac(class_="form-control") }}
+      {% for error in form.fec_nac.errors %}
+      <span style="color: red;"> {{ error }} </span>
+      {% endfor %}
+    </div>
+
+    <div class="form-group col-xs-12 col-sm-12 col-md-3  position-relative">
+      {{ form.telefono1.label }} {{ form.telefono1(class_="form-control") }}
+      {% for error in form.telefono1.errors %}
+      <span style="color: red;"> {{ error }} </span>
+      {% endfor %}
+    </div>
+    
+
+    <div class="col-12">
+      {{ form.hidden_tag() }}
+      {{ form.submit(class_="btn btn-primary") }}
+
+    </div>
+  
+   </form>
+
+</body>
+
+</html>
+{% endblock %}
